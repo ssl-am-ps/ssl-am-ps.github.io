@@ -29,8 +29,8 @@ audio {
   <li>Mandarin HuBERT: Open-sourced HuBERT trained on 1W+ hours Wenetspeech</li>
   <li>Unadapted mHuBERT + Untrained K-means: Un-adapted mHuBERT model with released K-means model</li>
   <li>Unadapted mHuBERT + Trained K-means: Un-adapted mHuBERT model with K-means model trained on extracted Mandarin representations</li>
-  <li>Adapted mHuBERT(one-iteration) + Trained K-means: Adapted mHuBERT model using one-iteration adaptation strategy with K-means model trained on extracted Mandarin representations</li>
-  <li>Adapted mHuBERT(two-iteration) + Trained K-means: Adapted mHuBERT model using two-iteration adaptation strategy with K-means model trained on extracted Mandarin representations</li>
+  <li>Adapted mHuBERT(one-iteration) + Trained K-means (proposed): Adapted mHuBERT model using one-iteration adaptation strategy with K-means model trained on extracted Mandarin representations</li>
+  <li>Adapted mHuBERT(two-iteration) + Trained K-means (proposed): Adapted mHuBERT model using two-iteration adaptation strategy with K-means model trained on extracted Mandarin representations</li>
     <!---adaptation performance table -->
   <table border="1">
     <tr>
@@ -319,6 +319,301 @@ audio {
   </table>
   
   <hr>
+  <h2> Results on language preservation and adaptation</h2>
+  <h3> System comparison</h3>
+  <li>GT: Ground truth speech</li>
+  <li>zh-2iter-before: Open-sourced HuBERT trained on 1W+ hours Wenetspeech</li>
+  <li>zh-1iter-before: Un-adapted mHuBERT model with released K-means model</li>
+  <li>zh-2iter-after: Un-adapted mHuBERT model with K-means model trained on extracted Mandarin representations</li>
+  <li>zh-1iter-after: Adapted mHuBERT model using one-iteration adaptation strategy with K-means model trained on extracted Mandarin representations</li>
+  <li>enzh-2iter: Adapted mHuBERT model using two-iteration adaptation strategy with K-means model trained on extracted Mandarin representations</li>
+    <!---preservation performance table -->
+  <table border="1">
+    <tr>
+      <td>No.</td>
+      <td>Transcript</td>
+      <td>Ground Truth</td>
+      <td>Mandarin HuBERT</td>
+      <td>Unadapted mHuBERT + Untrained K-means</td>
+      <td>Unadapted mHuBERT + Trained K-means</td>
+      <td>Adaptated mHuBERT(one-iteration)+ Trained K-means</td>
+      <td>Adpated mHuBERT(two-iteration) + Trained K-means</td>
+    </tr>
+    <!--each sample of each 6 systems-->
+    <tr>
+      <td>1</td>
+      <td>武术始终被看作我国的国粹</td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/gt/00_SSB06930002.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/mandarinhubert/0_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+untrain/0_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+train/0_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter1+1000/0_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter2+1000/0_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>新政的推出是一项长远的制度安排</td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/gt/01_SSB06930003.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/mandarinhubert/1_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+untrain/1_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+train/1_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter1+1000/1_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter2+1000/1_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>其实无论是通过和什么厂商合作</td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/gt/02_SSB06930004.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/mandarinhubert/2_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+untrain/2_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+train/2_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter1+1000/2_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter2+1000/2_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>使自己得到更多的实惠</td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/gt/SSB06930007.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/mandarinhubert/5_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+untrain/5_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+train/5_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter1+1000/5_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter2+1000/5_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>而且对手也大多是中国人</td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/gt/SSB06930014.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/mandarinhubert/11_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+untrain/11_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+train/11_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter1+1000/11_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter2+1000/11_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>不排除内幕交易的可能</td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/gt/SSB06930015.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/mandarinhubert/12_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+untrain/12_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+train/12_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter1+1000/12_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter2+1000/12_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>来一首死了都要爱</td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/gt/SSB06930017.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/mandarinhubert/14_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+untrain/14_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+train/14_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter1+1000/14_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter2+1000/14_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>可以和车主直接进行对话</td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/gt/SSB06930022.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/mandarinhubert/18_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+untrain/18_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/unadapt+train/18_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter1+1000/18_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/iter2+1000/18_pred.wav" type="audio/wav">
+        </audio>
+      </td>
+    </tr>
+  </table>
+  
    
 
 
