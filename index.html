@@ -16,13 +16,36 @@ audio {
 </style>
 </head>
 <body>
-    <h2>Seamless Language Expansion: Enhancing multilingual mastery in self-supervised model for speech re-synthesis task</h2>
+  <h1>Seamless Language Expansion: Enhancing Multilingual Mastery in Self-Supervised model for Speech Re-synthesis Task</h1>
     
   <hr>
 
-    <h2>Abstract</h2>
-    <li>Self-supervised (SSL) models have shown great performance in various downstream tasks like speech recognition and synthesis. However, they are typically developed for a limited set of languages, and may encounter new languages when applied in real-world scenarios. Developing a SSL model from scratch for a new language is costly due to its huge parameters. Thus, it is vital to figure out how to efficiently adapt an existed SSL model to a new language without impairing its original abilities. We propose novel adaptation methods and preservation strategies to achieve this goal. Applied to mHuBERT, we investigate their effectiveness on multi-lingual speech re-synthesis task. Experiments show that adaptation methods enable mHuBERT to be applied to a new language (Mandarin) with the relative value of WER on speech re-synthesis task reduced up to 61.72%. Also, our preservation strategies ensure that the performance on speech re-synthesis for both existed and new languages remains intact. </li>
-
+  <h2>Abstract</h2>
+  Self-supervised (SSL) models have shown great performance in various downstream tasks like speech recognition and synthesis. However, they are typically developed for a limited set of languages, and may encounter new languages when applied in real-world scenarios. Developing a SSL model from scratch for a new language is costly due to its huge parameters. Thus, it is vital to figure out how to efficiently adapt an existed SSL model to a new language without impairing its original abilities. We propose novel adaptation methods and preservation strategies to achieve this goal.  Applied to mHuBERT, we investigate their effectiveness on multi-lingual speech re-synthesis task. Experiments show that adaptation methods enable mHuBERT to be applied to a new language (Mandarin) with the relative value of WER on speech re-synthesis task reduced up to 61.72%. Also, our preservation strategies ensure that the performance on speech re-synthesis for both existed and new languages remains intact
+  <hr>  
+  <h2> Results on Mandarin adaptation</h2>
+    <!---adaptation performance table -->
+  <table>
+    <tr>
+      <td>No.</td>
+      <td>Ground Truth</td>
+      <td>Mandarin HuBERT</td>
+      <td>Unadapted mHuBERT + Untrained K-means</td>
+      <td>Unadapted mHuBERT + Trained K-means</td>
+      <td>Adaptated mHuBERT(one-iteratio)+ Trained K-means</td>
+      <td>Adpated mHuBERT(two-iteration) + Trained K-means</td>
+    </tr>
+    <!--each sample of each 6 systems-->
+    <tr>
+      <td>1</td>
+      <td>
+        <audio controls>
+        <source src="./adaptation/gt/00_SSB06930002.wav" type="audio/wav">
+        </audio>
+      </td>
+    </tr>
+  </table>
+  
   <hr>
    
 
